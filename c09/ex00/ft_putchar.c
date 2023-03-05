@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jherzog <jherzog@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 23:36:18 by jherzog           #+#    #+#             */
-/*   Updated: 2023/02/10 23:28:47 by jherzog          ###   ########.fr       */
+/*   Created: 2023/02/16 22:31:23 by jherzog           #+#    #+#             */
+/*   Updated: 2023/02/16 22:31:24 by jherzog          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_putchar(char c)
 {
-	char	c;
-
-	c = 97;
-	while (c != 123)
-	{
-		write(1, &c, 1);
-		c++;
-	}
+	write(1, &c, 1);
 }

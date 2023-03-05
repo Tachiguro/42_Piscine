@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jherzog <jherzog@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 23:36:18 by jherzog           #+#    #+#             */
-/*   Updated: 2023/02/10 23:28:47 by jherzog          ###   ########.fr       */
+/*   Created: 2023/02/01 15:16:55 by jherzog           #+#    #+#             */
+/*   Updated: 2023/02/01 19:17:58 by jherzog          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_alphabet(void)
+char	*ft_strupcase(char *str)
 {
-	char	c;
+	int	i;
 
-	c = 97;
-	while (c != 123)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		write(1, &c, 1);
-		c++;
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+		i++;
 	}
+	return (str);
 }
+
+// #include <stdio.h>
+// int	main()
+// {
+// 	char	to_upper[] = "n1r2dtrn3t drn4dtrn6 uidatrnduitae";
+// 	char	*p_str;
+// 	p_str = ft_strupcase(to_upper);
+// 	printf("p_str:%s\n", p_str);
+// 	printf("to_upper:%s\n", to_upper);
+// 	return (0);
+// }

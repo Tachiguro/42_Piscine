@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jherzog <jherzog@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 23:36:18 by jherzog           #+#    #+#             */
-/*   Updated: 2023/02/10 23:28:47 by jherzog          ###   ########.fr       */
+/*   Created: 2023/01/29 01:35:07 by jherzog           #+#    #+#             */
+/*   Updated: 2023/01/29 01:41:25 by jherzog          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_alphabet(void)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	char	c;
+	int	div;
+	int	mod;
 
-	c = 97;
-	while (c != 123)
-	{
-		write(1, &c, 1);
-		c++;
-	}
+	div = *a / *b;
+	mod = *a % *b;
+	*a = div;
+	*b = mod;
 }
+
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	int	a = 5;
+// 	int	b = 2;
+// 	printf("a:%i, a:%i\n", a, b);
+// 	ft_ultimate_div_mod(&a, &b);
+// 	printf("a:%i, a:%i\n", a, b);
+// 	return (0);
+// }

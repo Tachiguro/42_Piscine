@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jherzog <jherzog@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 23:36:18 by jherzog           #+#    #+#             */
-/*   Updated: 2023/02/10 23:28:47 by jherzog          ###   ########.fr       */
+/*   Created: 2023/02/16 22:41:14 by jherzog           #+#    #+#             */
+/*   Updated: 2023/02/16 22:41:16 by jherzog          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_alphabet(void)
+int	ft_strcmp(char *s1, char *s2)
 {
-	char	c;
+	int	i;
 
-	c = 97;
-	while (c != 123)
+	i = 0;
+	while (s1[i] != '\0' || s2[i] != '\0')
 	{
-		write(1, &c, 1);
-		c++;
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
 	}
+	return (s1[i] - s2[i]);
 }

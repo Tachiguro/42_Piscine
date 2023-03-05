@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jherzog <jherzog@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 23:36:18 by jherzog           #+#    #+#             */
-/*   Updated: 2023/02/10 23:28:47 by jherzog          ###   ########.fr       */
+/*   Created: 2023/02/07 22:04:44 by jherzog           #+#    #+#             */
+/*   Updated: 2023/02/09 16:18:01 by jherzog          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_alphabet(void)
+int	ft_recursive_factorial(int nb)
 {
-	char	c;
-
-	c = 97;
-	while (c != 123)
-	{
-		write(1, &c, 1);
-		c++;
-	}
+	if (nb < 0)
+		return (0);
+	else if (nb == 0)
+		return (1);
+	else
+		return (ft_recursive_factorial(nb - 1) * nb);
 }
+
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	int i;
+
+// 	i = ft_recursive_factorial(5);
+// 	printf("i:%i\n", i);
+// 	return (0);
+// }

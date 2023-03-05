@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jherzog <jherzog@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 23:36:18 by jherzog           #+#    #+#             */
-/*   Updated: 2023/02/10 23:28:47 by jherzog          ###   ########.fr       */
+/*   Created: 2023/02/07 22:54:52 by jherzog           #+#    #+#             */
+/*   Updated: 2023/02/07 23:04:48 by jherzog          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_alphabet(void)
+int	ft_recursive_power(int nb, int power)
 {
-	char	c;
-
-	c = 97;
-	while (c != 123)
-	{
-		write(1, &c, 1);
-		c++;
-	}
+	if (power < 0)
+		return (0);
+	else if (power == 0)
+		return (1);
+	return (ft_recursive_power(nb, power - 1) * nb);
 }
+
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	i = ft_recursive_power(5, 4);
+// 	printf("i:%i\n", i);
+// 	return (0);
+// }

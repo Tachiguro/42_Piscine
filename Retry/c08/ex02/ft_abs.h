@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jherzog <jherzog@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 23:36:18 by jherzog           #+#    #+#             */
-/*   Updated: 2023/02/10 23:28:47 by jherzog          ###   ########.fr       */
+/*   Created: 2023/02/15 23:40:49 by jherzog           #+#    #+#             */
+/*   Updated: 2023/02/16 18:53:11 by jherzog          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_alphabet(void)
-{
-	char	c;
-
-	c = 97;
-	while (c != 123)
-	{
-		write(1, &c, 1);
-		c++;
-	}
-}
+#ifndef FT_ABS_H
+# define FT_ABS_H
+# define ABS(Value) ((Value < 0) ? -(Value) : (Value))
+#endif
+// #include "ft_abs.h"
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	printf("%d\n", ABS(-1321));
+// }

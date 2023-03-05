@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jherzog <jherzog@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 23:36:18 by jherzog           #+#    #+#             */
-/*   Updated: 2023/02/10 23:28:47 by jherzog          ###   ########.fr       */
+/*   Created: 2023/02/16 00:03:48 by jherzog           #+#    #+#             */
+/*   Updated: 2023/02/16 18:54:31 by jherzog          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-void	ft_print_alphabet(void)
+typedef struct s_point
 {
-	char	c;
+	int	x;
+	int	y;
+}	t_point;
+#endif
 
-	c = 97;
-	while (c != 123)
-	{
-		write(1, &c, 1);
-		c++;
-	}
+#include "ft_point.h"
+void set_point(t_point *point)
+{
+	point->x = 42;
+	point->y = 21;
+}
+#include <stdio.h>
+int main(void)
+{
+	t_point point;
+	set_point(&point);
+	printf("x:%i, y:%i\n", point.x, point.y);
+	return (0);
 }

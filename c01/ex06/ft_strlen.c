@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jherzog <jherzog@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 23:36:18 by jherzog           #+#    #+#             */
-/*   Updated: 2023/02/10 23:28:47 by jherzog          ###   ########.fr       */
+/*   Created: 2023/01/29 01:53:11 by jherzog           #+#    #+#             */
+/*   Updated: 2023/01/29 01:58:39 by jherzog          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_alphabet(void)
+int	ft_strlen(char *str)
 {
-	char	c;
+	int	counter;
 
-	c = 97;
-	while (c != 123)
+	counter = 0;
+	while (str[counter] != '\0')
 	{
-		write(1, &c, 1);
-		c++;
+		counter++;
 	}
+	return (counter);
 }
+
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	int i;
+// 	char text[] = "This is a text"; // 14
+// 	i = ft_strlen(text);
+// 	printf("%i\n", i);
+// }

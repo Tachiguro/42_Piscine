@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   translate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jherzog <jherzog@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 23:36:18 by jherzog           #+#    #+#             */
-/*   Updated: 2023/02/10 23:28:47 by jherzog          ###   ########.fr       */
+/*   Created: 2023/02/11 22:07:45 by jherzog           #+#    #+#             */
+/*   Updated: 2023/02/12 17:48:13 by jherzog          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "functions.h"
 
-void	ft_print_alphabet(void)
+int	ft_translate(char *number, char *path_2_dict)
 {
-	char	c;
-
-	c = 97;
-	while (c != 123)
-	{
-		write(1, &c, 1);
-		c++;
-	}
+	//Todo: Here translate the input!
+	printf(" #Info: begin ft_translate:\n");
+	printf("number:>>%s<<\n", number);
+	printf("path:>>%s<<\n",path_2_dict);
+	printf(" #Info: end ft_translate:\n");
+	return (1);
 }

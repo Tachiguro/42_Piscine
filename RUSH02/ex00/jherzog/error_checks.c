@@ -1,25 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   error_checks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jherzog <jherzog@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 23:36:18 by jherzog           #+#    #+#             */
-/*   Updated: 2023/02/10 23:28:47 by jherzog          ###   ########.fr       */
+/*   Created: 2023/02/11 22:39:45 by jherzog           #+#    #+#             */
+/*   Updated: 2023/02/12 18:53:01 by jherzog          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "functions.h"
 
-void	ft_print_alphabet(void)
+int	dict_found(char *path_2_dict)
 {
-	char	c;
+	int fd;
 
-	c = 97;
-	while (c != 123)
+	fd = open(path_2_dict, O_WRONLY);
+	close(fd);
+	return (fd);
+}
+
+int	check_number(char *number)
+{
+	long	i;
+
+	i = 0;
+	while(number[i] != '\0')
 	{
-		write(1, &c, 1);
-		c++;
+		if (number[i] < '1' && number[i] > '9')
+			return (-1);
+		i++;
 	}
+	i = ft_atol(number);
+	printf("i:%li\n",i);
+	if (i == -1)
+	{
+		return (-1);
+	}
+	if (i < 0 || i > 4294967295)
+		return (-1);
+	return (0);
 }
